@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="#" class="navbar-brand mx-auto">Inventario</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt4 text-center">
+                <table class="table table-striped">
+                    <tr>
+                        <th>ID</th>
+                        <th>TITLE</th>
+                        <th>DATA</th>
+                    </tr>
+                    <% for(let i =0; i< inventario.length; i++) {%>
+                        <tr>
+                            <td><%= inventario[i].idInven%></td>
+                            <td><%= inventario[i].title%></td>
+                            <td><%= inventario[i].data%></td>
+                        </tr>
+                    <%}%>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-5 mt-4 card">
+            <form action="inventory" method="POST" class="card-body">
+                <h3 class="card-title">Agregue un nuevo elemento</h3>
+                <div class="form-group">
+                    <label for="item">Ingrese un elemento: <input type="text" name="item" class="form-control"></label>
+                </div>
+                <div class="form-group">
+                    <label for="data">Ingrese la cantidad: <input type="text" name="data" class="form-control"></label>
+                </div>
+                <input type="submit" class="btn btn-secondary">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
